@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Bookstore::Application.config.secret_token = '955d08a7894956f281c31bc6421705e6a94dc620918827bbb5d3d837bf7a3dd050f21943300b80569b5d3de585d2b66951e4c3e803851b3f214d10944151d8d4'
+Bookstore::Application.config.secret_token = '7d2c15282460f2bb15fa731e736eca530fd92e78ad2588ab2a0b82fe55c41fcc01bf16831ee927e4aac2cae5f198a8c527d7e1f45e03b0516f1739946cb2d5cc'
