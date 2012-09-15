@@ -1,2 +1,0 @@
-class PeopleBooksController < ApplicationController
-end

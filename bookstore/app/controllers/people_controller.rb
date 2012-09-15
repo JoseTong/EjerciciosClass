@@ -8,7 +8,13 @@ class PeopleController < ApplicationController
       format.html # index.html.erb
       format.json { render json: @people }
     end
+	
   end
+  
+  def add_book
+	@user=user.find(params[:id])
+  end	
+  
 
   # GET /people/1
   # GET /people/1.json
