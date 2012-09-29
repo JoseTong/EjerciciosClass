@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ChatUPC</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <--Esto es copiuadp de pusher-->
+   <script src="http://js.pusher.com/1.12/pusher.min.js" type="text/javascript"></script>
+	
+	<script type="text/javascript">
+    // Enable pusher logging - don't include this in production
+    Pusher.log = function(message) {
+      if (window.console && window.console.log) window.console.log(message);
+    };
+
+    // Flash fallback logging - don't include this in production
+    WEB_SOCKET_DEBUG = true;
+							 
+    var pusher = new Pusher('2fe4a459d1c72acfae2a');
+    
+	var channel = pusher.subscribe('DEWYUS2012');
+    channel.bind('message:create', function(data) {
+      
+	  
+	  var message = "<li id='message_" + data.id + "'>"
+	  message += data.name +":"+data.content
+	  message += "</li>"
+	  
+	  $("#chat_container").append(message);
+	  $("#message_content").val("");
+	  $("#message_content").focus();
+	  
+    });
+  </script>
+  
+</head>
+<body>
+
+<%= yield %>
+
+
+
+
+</body>
+</html>
